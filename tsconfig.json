@@ -1,0 +1,15 @@
+{
+    "compilerOptions": {
+      "target": "ESNext",
+      "module": "NodeNext",
+      "moduleResolution": "NodeNext",
+      "strict": true,
+      "esModuleInterop": true,
+      "skipLibCheck": true,
+      "outDir": "dist",
+      "types": ["node", "express"]
+    },
+    "include": ["./**/*.ts"],
+    "exclude": ["node_modules"]
+  }
+  //ts-node server/server.ts
