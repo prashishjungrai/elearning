@@ -1,3 +1,5 @@
+import { updateAccessToken } from "../controllers/user.controller";
+
 import express from "express";
 import {
   addAnwser,
@@ -18,6 +20,7 @@ const courseRouter = express.Router();
 
 courseRouter.post(
   "/create-course",
+  updateAccessToken,//added
   isAutheticated,
   authorizeRoles("admin"),
   uploadCourse
