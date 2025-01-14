@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <title>Course Card</title>
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 py-5">
+  <div class="w-full min-h-[35vh] dark:bg-slate-500 dark:bg-opacity-20 backdrop-blur border dark:border-[#ffffff1d] border-[#00000015] dark:shadow-[bg-slate-700] rounded-lg p-3 shadow-sm dark:shadow-inner">
+    <!-- Thumbnail Image -->
+    <img 
+      src="https://via.placeholder.com/500x300" 
+      alt="Course Thumbnail" 
+      class="rounded w-full object-contain"
+    />
+    <br />
+    <!-- Course Title -->
+    <h1 class="font-Poppins text-[16px] text-black dark:text-white">
+      Course Name
+    </h1>
+    <!-- Ratings and Students -->
+    <div class="w-full flex items-center justify-between pt-2">
+      <span class="text-black dark:text-white">★★★★☆</span>
+      <h5 class="text-black dark:text-white hidden 800px:inline">
+        100 Students
+      </h5>
+    </div>
+    <!-- Price and Lectures -->
+    <div class="w-full flex items-center justify-between pt-3">
+      <div class="flex">
+        <h3 class="text-black dark:text-white">$49</h3>
+        <h5 class="pl-3 text-[14px] mt-[-5px] line-through opacity-80 text-black dark:text-white">
+          $99
+        </h5>
+      </div>
+      <div class="flex items-center pb-3">
+        <i class="fas fa-list text-white"></i>
+        <h5 class="pl-2 text-black dark:text-white">20 Lectures</h5>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
