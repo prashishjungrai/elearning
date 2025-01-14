@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.js"></script>
+    <style>
+        .text-gradient {
+            background: linear-gradient(to right, #37a39a, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .nav-active {
+            color: #37a39a;
+            border-bottom: 2px solid #37a39a;
+        }
+    </style>
+</head>
+<body>
+    <div class="w-full relative">
+        <div class="w-full border-b h-[80px] z-[80] shadow">
+            <div class="w-[95%] m-auto py-2 h-full">
+                <div class="w-full h-[80px] flex items-center justify-between p-3">
+                    <div>
+                        <a href="/" class="flex items-center gap-2 text-[28px] font-Poppins font-[500]">
+                            Elearning
+                        </a>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="hidden 800px:flex items-center">
+                            <a href="/" class="text-[18px] px-6 font-Poppins font-[400] nav-active">Home</a>
+                            <a href="/courses" class="text-[18px] px-6 font-Poppins font-[400]">Courses</a>
+                            <a href="/about" class="text-[18px] px-6 font-Poppins font-[400]">About</a>
+                        </div>
+                        <div class="flex items-center px-4">
+                            <button class="bg-gray-100 rounded-full p-2">
+                                <i class="fas fa-moon"></i>
+                            </button>
+                        </div>
+                        <div class="800px:hidden">
+                            <i class="fas fa-bars text-2xl cursor-pointer"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
