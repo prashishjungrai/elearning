@@ -43,16 +43,16 @@ const CourseAnalytics = (props: Props) => {
       ) : (
         <div className="h-screen">
           <div className="mt-[50px]">
-            <h1 className={`${styles.title} px-5 !text-start`}>
+            {/* <h1 className={`${styles.title} px-5 !text-start`}>
               Courses Analytics
             </h1>
             <p className={`${styles.label} px-5`}>
               Last 12 months analytics data{" "}
-            </p>
+            </p> */}
           </div>
 
           <div className="w-full h-[90%] flex items-center justify-center">
-            <ResponsiveContainer width="90%" height="50%">
+           {/*  <ResponsiveContainer width="90%" height="50%">
               <BarChart width={150} height={300} data={analyticsData}>
                 <XAxis dataKey="name">
                   <Label offset={0} position="insideBottom" />
@@ -62,7 +62,7 @@ const CourseAnalytics = (props: Props) => {
                   <LabelList dataKey="uv" position="top" />
                 </Bar>
               </BarChart>
-            </ResponsiveContainer>
+            </ResponsiveContainer> */}
           </div>
         </div>
       )}

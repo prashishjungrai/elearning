@@ -5,6 +5,7 @@ import {
   AreaChart,
   Area,
   XAxis,
+  CartesianGrid,
   YAxis,
   Tooltip,
   ResponsiveContainer,
@@ -72,6 +73,7 @@ const UserAnalytics = ({isDashboard}:Props) => {
                  bottom: 0,
                }}
              >
+              <CartesianGrid strokeDasharray="3 3" />
                <XAxis dataKey="name" />
                <YAxis />
                <Tooltip />

@@ -4,6 +4,8 @@ import React, { useEffect } from "react";
 import {
   LineChart,
   Line,
+  AreaChart,
+  Area,
   XAxis,
   YAxis,
   CartesianGrid,
@@ -43,21 +45,17 @@ import Loader from "../../Loader/Loader";
 //     Count: 200,
 //   },
 // ];
-
-
 type Props = {
   isDashboard?: boolean;
 };
 
 export default function OrdersAnalytics({ isDashboard }: Props) {
-  const {data, isLoading } = useGetOrdersAnalyticsQuery({});
-
-  const analyticsData: any = [];
-
-  data &&
-    data.orders.last12Months.forEach((item: any) => {
-      analyticsData.push({ name: item.name, Count: item.count });
-    });
+  const { data, isLoading } = useGetOrdersAnalyticsQuery({});
+  
+  const analyticsData = data?.orders?.last12Months.map((item: any) => ({
+    name: item.month, // Change 'item.name' to 'item.month' if required
+    Count: item.count,
+  })) || []; // Fallback to an empty array
 
   return (
     <>
@@ -87,28 +85,33 @@ export default function OrdersAnalytics({ isDashboard }: Props) {
             } flex items-center justify-center`}
           >
             <ResponsiveContainer
-              width={isDashboard ? "100%" : "90%"}
-              height={isDashboard ? "100%" : "50%"}
-            >
-              <LineChart
-                width={500}
-                height={300}
-                data={analyticsData}
-                margin={{
-                  top: 5,
-                  right: 30,
-                  left: 20,
-                  bottom: 5,
-                }}
-              >
-                <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="name" />
-                <YAxis />
-                <Tooltip />
-                {!isDashboard && <Legend />}
-                <Line type="monotone" dataKey="Count" stroke="#82ca9d" />
-              </LineChart>
-            </ResponsiveContainer>
+  width={isDashboard ? "100%" : "90%"}
+  height={isDashboard ? "100%" : "50%"}
+>
+  <AreaChart
+    data={analyticsData}
+    margin={{
+      top: 5,
+      right: 30,
+      left: 20,
+      bottom: 5,
+    }}
+  >
+    <CartesianGrid strokeDasharray="3 3" />
+    <XAxis dataKey="name" />
+    <YAxis />
+    <Tooltip />
+    {!isDashboard && <Legend />}
+    {/* Add Area with fill for the blue color */}
+    <Area
+      type="monotone"
+      dataKey="Count"
+      stroke="#4d62d9" // Line color
+      fill="#4d62d9"   // Fill color
+       // Transparency of the fill
+    />
+  </AreaChart>
+</ResponsiveContainer>
           </div>
         </div>
       )}
