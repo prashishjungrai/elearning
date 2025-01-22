@@ -1,3 +1,4 @@
+//course preview
 import React, { FC } from "react";
 import CoursePlayer from "../../../utils/CoursePlayer";
 import { styles } from "../../../../app/styles/style";
