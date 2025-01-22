@@ -1,3 +1,5 @@
+//coursecard
+
 import Ratings from "@/app/utils/Ratings";
 import Image from "next/image";
 import Link from "next/link";
